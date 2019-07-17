@@ -1,0 +1,16 @@
+<html>
+<title>List View</title>
+<head></head>
+<body>
+
+<a href='/'>home</a>
+
+<ul>
+{% for c in crud_list %}
+<li>{{c.name}} - {{c.email}} - {{c.color}} - {{c.content}}</li>
+{% endfor %}
+</ul>
+
+{{date}}
+</body>
+</html>
