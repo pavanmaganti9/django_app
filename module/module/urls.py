@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	url(r'^$', generic_views.home, name='home'),
 	path('generic/', include('generic.urls')),
-	
 	path('generic/update/<int:id>/', generic_views.post_update_new, name='update'),
+	#path('', include('api.urls')),
+	path('api/', include('api.urls'))
 ]
