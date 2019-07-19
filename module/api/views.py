@@ -6,9 +6,16 @@ from .models import Songs
 from .serializers import SongsSerializer
 
 
-class ListSongsView(generics.ListAPIView):
-    """
-    Provides a get method handler.
-    """
-    queryset = Songs.objects.all()
-    serializer_class = SongsSerializer
+class ListSongsView(generics.RetrieveUpdateDestroyAPIView):
+	lookup_field = 'id'
+	queryset = Songs.objects.all()
+	serializer_class = SongsSerializer
+	
+class ListSongsView2(generics.ListAPIView):
+	queryset = Songs.objects.all()
+	serializer_class = SongsSerializer
+	
+class ListSongsCreateView(generics.CreateAPIView):
+	lookup_field = 'id'
+	queryset = Songs.objects.all()
+	serializer_class = SongsSerializer
